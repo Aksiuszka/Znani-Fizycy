@@ -9,5 +9,5 @@ let animationTimeline = gsap.timeline({
     },
 });
 animationTimeline.fromTo(".introSection", {clipPath: 'circle(10%)'}, {clipPath: 'circle(80%)', duration:4});
-animationTimeline.fromTo(".fizykografika", {opacity:1}, {opacity:0, duration:1},"-=3");
+animationTimeline.fromTo(".fizykografika", {opacity:1}, {opacity:0, duration:1},"-=4");
 animationTimeline.fromTo(".introText", {opacity:0}, {opacity:1, duration:1});
