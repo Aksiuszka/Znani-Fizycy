@@ -103,5 +103,10 @@ function loadQuiz () {
 }
 submitBtn.addEventListener("click", ()=>{
     currentQuiz++;
-    loadQuiz();
+    if(currentQuiz < daneQuizu.length){
+        loadQuiz();
+    }
+    else{
+        alert("Finisz, zlicze punkty");
+    }
 });
