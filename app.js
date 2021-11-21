@@ -21,11 +21,11 @@ const daneQuizu =[
         c: 'Matematyka',
         d: 'Biologia',
         e: 'Jestem humanistą! W szkole cytowałam Szekspira!',
-        sklodowska: '0',
-        newton: '1',
-        fibonacci: '2',
-        darwin: '3',
-        humanista: '4'
+        a_weight: '0',
+        b_weight: '1',
+        c_weight: '2',
+        d_weight: '3',
+        e_weight: '4'
     },
     {
         question: 'Które z odkryć nauki najbardziej Cię inspirują?',
@@ -34,11 +34,11 @@ const daneQuizu =[
         c: 'Macierze, ciągi, kombinatoryka - tu czuję się jak ryba w wodzie',
         d: 'Budowa komórek, genetyka, dobór naturalny,  teoria ewolucji!',
         e: 'Jestem humanistą! Inspiruje mnie Szekspir!',
-        sklodowska: '0',
-        newton: '1',
-        fibonacci: '2',
-        darwin: '3',
-        humanista: '4'
+        a_weight: '0',
+        b_weight: '1',
+        c_weight: '2',
+        d_weight: '3',
+        e_weight: '4'
     },
     {
         question: 'Gdybyś mógł wybrac coś dobrego do jedzonka, co by to było?',
@@ -47,11 +47,11 @@ const daneQuizu =[
         c: 'Gorgonzola z prosciutto crudo, margarita bez sosu czosnkowego i gelato o smaku pistacji!',
         d: 'Ciasto z jabłkami, bekonem i cebulą, a to wszystko polane sostem Worcestershire',
         e: 'Jestem humanistą! Żywię się literaturą!',
-        sklodowska: '0',
-        newton: '1',
-        fibonacci: '2',
-        darwin: '3',
-        humanista: '4'
+        a_weight: '0',
+        b_weight: '1',
+        c_weight: '2',
+        d_weight: '3',
+        e_weight: '4'
     },
     {
         question: 'W czasie wolnym ....?',
@@ -60,11 +60,11 @@ const daneQuizu =[
         c: 'Udowadniam w towarzystwie, dlaczego A -(B U C) jest równe (A-B) - C',
         d: 'Mam swoją prywatną hodowlę chomików dżungarskich oraz w oranżerii trzymam 12 gatunków zięb',
         e: 'Jestem humanistą! Czas wolny spędzam z literaturą!',
-        sklodowska: '0',
-        newton: '1',
-        fibonacci: '2',
-        darwin: '3',
-        humanista: '4'
+        a_weight: '0',
+        b_weight: '1',
+        c_weight: '2',
+        d_weight: '3',
+        e_weight: '4'
     },
     {
         question: 'Zawsze marzyłem aby zostać ... ',
@@ -73,11 +73,11 @@ const daneQuizu =[
         c: 'Nauczycielem matematyki',
         d: 'Weterynarzem',
         e: 'Recenzentem książek beletrystycznych',
-        sklodowska: '0',
-        newton: '1',
-        fibonacci: '2',
-        darwin: '3',
-        humanista: '4'
+        a_weight: '0',
+        b_weight: '1',
+        c_weight: '2',
+        d_weight: '3',
+        e_weight: '4'
     },
 ];
 const question = document.getElementById("questionGap");
@@ -87,12 +87,19 @@ const answer_c = document.getElementById("c-answ");
 const answer_d = document.getElementById("d-answ");
 const answer_e = document.getElementById("e-answ");
 const submitBtn = document.getElementById("submitBtn");
+const answer = document.querySelector(".answer")
 
 let currentQuiz = 0;
+let score= 0;
 
 loadQuiz();
 
 function loadQuiz () {
+    const selectedAnswer = document.querySelector('input[type="radio"]:checked');
+    if(!selectedAnswer){
+        alert("Należy wybrać odpowiedź!");
+        return;
+    }
     const quizDataNow = daneQuizu[currentQuiz];
     question.innerHTML = quizDataNow.question;
     answer_a.innerHTML = quizDataNow.a;
@@ -101,7 +108,18 @@ function loadQuiz () {
     answer_d.innerHTML = quizDataNow.d;
     answer_e.innerHTML = quizDataNow.e;
 }
+const isSelected = ()=>{
+let answerDefault = undefined;
+answer.forEach((singleAnswer)=>{
+    if(singleAnswer.checked){
+        answerDefault=singleAnswer.id;
+    }
+});
+return answer;
+}
+
 submitBtn.addEventListener("click", ()=>{
+    
     currentQuiz++;
     if(currentQuiz < daneQuizu.length){
         loadQuiz();
