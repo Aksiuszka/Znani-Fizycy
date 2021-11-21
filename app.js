@@ -86,6 +86,7 @@ const answer_b = document.getElementById("b-answ");
 const answer_c = document.getElementById("c-answ");
 const answer_d = document.getElementById("d-answ");
 const answer_e = document.getElementById("e-answ");
+const submitBtn = document.getElementById("submitBtn");
 
 let currentQuiz = 0;
 
@@ -100,3 +101,7 @@ function loadQuiz () {
     answer_d.innerHTML = quizDataNow.d;
     answer_e.innerHTML = quizDataNow.e;
 }
+submitBtn.addEventListener("click", ()=>{
+    currentQuiz++;
+    loadQuiz();
+});
