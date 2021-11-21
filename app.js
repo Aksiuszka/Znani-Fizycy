@@ -21,11 +21,11 @@ const daneQuizu =[
         c: 'Matematyka',
         d: 'Biologia',
         e: 'Jestem humanistą! W szkole cytowałam Szekspira!',
-        sklodowska: 'a',
-        newton: 'b',
-        fibonacci: 'c',
-        darwin: 'd',
-        humanista: 'e'
+        sklodowska: '0',
+        newton: '1',
+        fibonacci: '2',
+        darwin: '3',
+        humanista: '4'
     },
     {
         question: 'Które z odkryć nauki najbardziej Cię inspirują?',
@@ -34,11 +34,11 @@ const daneQuizu =[
         c: 'Macierze, ciągi, kombinatoryka - tu czuję się jak ryba w wodzie',
         d: 'Budowa komórek, genetyka, dobór naturalny,  teoria ewolucji!',
         e: 'Jestem humanistą! Inspiruje mnie Szekspir!',
-        sklodowska: 'a',
-        newton: 'b',
-        fibonacci: 'c',
-        darwin: 'd',
-        humanista: 'e'
+        sklodowska: '0',
+        newton: '1',
+        fibonacci: '2',
+        darwin: '3',
+        humanista: '4'
     },
     {
         question: 'Gdybyś mógł wybrac coś dobrego do jedzonka, co by to było?',
@@ -47,11 +47,11 @@ const daneQuizu =[
         c: 'Gorgonzola z prosciutto crudo, margarita bez sosu czosnkowego i gelato o smaku pistacji!',
         d: 'Ciasto z jabłkami, bekonem i cebulą, a to wszystko polane sostem Worcestershire',
         e: 'Jestem humanistą! Żywię się literaturą!',
-        sklodowska: 'a',
-        newton: 'b',
-        fibonacci: 'c',
-        darwin: 'd',
-        humanista: 'e'
+        sklodowska: '0',
+        newton: '1',
+        fibonacci: '2',
+        darwin: '3',
+        humanista: '4'
     },
     {
         question: 'W czasie wolnym ....?',
@@ -60,11 +60,11 @@ const daneQuizu =[
         c: 'Udowadniam w towarzystwie, dlaczego A -(B U C) jest równe (A-B) - C',
         d: 'Mam swoją prywatną hodowlę chomików dżungarskich oraz w oranżerii trzymam 12 gatunków zięb',
         e: 'Jestem humanistą! Czas wolny spędzam z literaturą!',
-        sklodowska: 'a',
-        newton: 'b',
-        fibonacci: 'c',
-        darwin: 'd',
-        humanista: 'e'
+        sklodowska: '0',
+        newton: '1',
+        fibonacci: '2',
+        darwin: '3',
+        humanista: '4'
     },
     {
         question: 'Zawsze marzyłem aby zostać ... ',
@@ -73,11 +73,11 @@ const daneQuizu =[
         c: 'Nauczycielem matematyki',
         d: 'Weterynarzem',
         e: 'Recenzentem książek beletrystycznych',
-        sklodowska: 'a',
-        newton: 'b',
-        fibonacci: 'c',
-        darwin: 'd',
-        humanista: 'e'
+        sklodowska: '0',
+        newton: '1',
+        fibonacci: '2',
+        darwin: '3',
+        humanista: '4'
     },
 ];
 const question = document.getElementById("questionGap");
