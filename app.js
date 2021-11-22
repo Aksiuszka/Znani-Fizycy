@@ -80,51 +80,88 @@ const daneQuizu =[
         e_weight: '4'
     },
 ];
-const question = document.getElementById("questionGap");
+let currentQuestion=0;
+let score=[];
+let selectedAnswers = [];
+const allQuestions = daneQuizu.length;
+
+//assigning IDs
+const container = document.getElementById("quiz");
+const questionEl = document.getElementById("questionGap");
 const answer_a = document.getElementById("a-answ");
 const answer_b = document.getElementById("b-answ");
 const answer_c = document.getElementById("c-answ");
 const answer_d = document.getElementById("d-answ");
 const answer_e = document.getElementById("e-answ");
-const submitBtn = document.getElementById("submitBtn");
-const answer = document.querySelector(".answer")
+const nextButton = document.getElementById("next-btn");
+const prevButton = document.getElementById("prev-btn");
+const result = document.getElementById("result");
 
-let currentQuiz = 0;
-let score= 0;
-
-loadQuiz();
-
-function loadQuiz () {
-    const selectedAnswer = document.querySelector('input[type="radio"]:checked');
-    if(!selectedAnswer){
-        alert("Należy wybrać odpowiedź!");
+//generuję pytanie
+function generateQuestions(index){
+  const question = daneQuizu[index];
+  const option1total = daneQuizu[index].a_weight;
+  const option2total = daneQuizu[index].b_weight;
+  const option3total = daneQuizu[index].c_weight;
+  const option4total = daneQuizu[index].d_weight;
+  const option5total = daneQuizu[index].e_weight;
+  //elementy html uzyskują nowe nazwy i atrybuty wartościujące
+  questionEl.innerHTML = `${index+1}. ${question.question}`
+  answer_a.setAttribute('data-total', `${option1total}`);
+  answer_b.setAttribute('data-total', `${option2total}`);
+  answer_c.setAttribute('data-total', `${option3total}`);
+  answer_d.setAttribute('data-total', `${option4total}`);
+  answer_e.setAttribute('data-total', `${option5total}`);
+  answer_a.innerHTML = `${question.a}`
+  answer_b.innerHTML = `${question.b}`
+  answer_c.innerHTML = `${question.c}`
+  answer_d.innerHTML = `${question.d}`
+  answer_e.innerHTML = `${question.e}`
+}
+function loadNextQuestion(){
+    const selectedOption = document.querySelector('input[type="radio"]:checked');
+    if(!selectedOption) {
+        alert('Please select your answer!');
         return;
     }
-    const quizDataNow = daneQuizu[currentQuiz];
-    question.innerHTML = quizDataNow.question;
-    answer_a.innerHTML = quizDataNow.a;
-    answer_b.innerHTML = quizDataNow.b;
-    answer_c.innerHTML = quizDataNow.c;
-    answer_d.innerHTML = quizDataNow.d;
-    answer_e.innerHTML = quizDataNow.e;
-}
-const isSelected = ()=>{
-let answerDefault = undefined;
-answer.forEach((singleAnswer)=>{
-    if(singleAnswer.checked){
-        answerDefault=singleAnswer.id;
+    const quizScore = Number(selectedOption.nextElementSibling.getAttribute('data-total'));
+    score.push(quizScore);
+    selectedAnswers.push();
+    const calculateTotalScore = score.reduce((total,currentNumber) => total + currentNumber);
+    currentQuestion++;
+    //kiedy skonczymy, czyścimy radio
+    selectedOption.checked = false;
+    //jeśli quiz osiągnie koniec, chcemy żeby wyświetlił się napis koniec
+    if(currentQuestion == allQuestions-1)
+    {
+            nextButton.textContent = "Koniec Quizu";
     }
-});
-return answer;
+    if(currentQuestion == allQuestions)
+    {
+            result.innerHTML = 
+            `<h2>Twój score to ${calculateTotalScore} </h2>
+            <div class="summary">
+            <h1>Punktacja</h1>
+            <p>Oto którym naukowcem jesteś w głębi serca:</p>
+            <p>powyżej 17- Nie jesteś naukowcem! Jesteś humanistą!</p>
+            <p>14 - 17 - Charles Darwin</p>
+            <p>9 - 13 - Leonardo Fibonacci</p>
+            <p>5 - 8 - Sir Isaac Newton </p>
+            <p>0 - 4 - Maria Skłodowska Curie</p>
+        </div>
+        `;
+        return;
+    }
+    generateQuestions(currentQuestion);
 }
+function loadPrevQuestion(){
+    currentQuestion--;
+    score.pop();
+    generateQuestions(currentQuestion);
 
-submitBtn.addEventListener("click", ()=>{
-    
-    currentQuiz++;
-    if(currentQuiz < daneQuizu.length){
-        loadQuiz();
-    }
-    else{
-        alert("Finisz, zlicze punkty");
-    }
-});
+}
+generateQuestions(currentQuestion);
+
+nextButton.addEventListener("click",loadNextQuestion);
+prevButton.addEventListener("click", loadPrevQuestion);
+
