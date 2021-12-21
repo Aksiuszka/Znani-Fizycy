@@ -105,6 +105,7 @@ const answer_d = document.getElementById("d-answ");
 const answer_e = document.getElementById("e-answ");
 const nextButton = document.getElementById("next-btn");
 const prevButton = document.getElementById("prev-btn");
+const reloadButton = document.getElementById("reload-btn");
 const result = document.getElementById("result");
 
 //generuję pytanie
@@ -145,19 +146,22 @@ function loadNextQuestion(){
     if(currentQuestion == allQuestions-1)
     {
             nextButton.textContent = "Koniec Quizu";
+            
     }
     if(currentQuestion == allQuestions)
     {
+            
             result.innerHTML = 
-            `<h2>Twój score to ${calculateTotalScore} </h2>
+            `<h4>Twój score to ${calculateTotalScore} </h4>
             <div class="summary">
-            <h1>Punktacja</h1>
+            <h3>Punktacja</h3>
             <p>Oto którym naukowcem jesteś w głębi serca:</p>
-            <p>powyżej 17- Nie jesteś naukowcem! Jesteś humanistą!</p>
-            <p>14 - 17 - Charles Darwin</p>
-            <p>9 - 13 - Leonardo Fibonacci</p>
-            <p>5 - 8 - Sir Isaac Newton </p>
-            <p>0 - 4 - Maria Skłodowska Curie</p>
+            <p>powyżej 15- Nie jesteś naukowcem! Jesteś humanistą!</p>
+            <p>12 - 15 - Charles Darwin</p>
+            <p>8 - 11 - Leonardo Fibonacci</p>
+            <p>4 - 7 - Sir Isaac Newton </p>
+            <p>0 - 3 - Maria Skłodowska Curie</p>
+            <button id="reload-btn" class="start-btn btn">Reload</i></button>
         </div>
         `;
         return;
@@ -170,8 +174,18 @@ function loadPrevQuestion(){
     generateQuestions(currentQuestion);
 
 }
+function reloadQuiz(e){
+if(e.target.matches('button')){
+    currentQuestion=0;
+    score=[];
+    location.reload();
+}
+}
+
 generateQuestions(currentQuestion);
 
 nextButton.addEventListener("click",loadNextQuestion);
 prevButton.addEventListener("click", loadPrevQuestion);
+result.addEventListener("click", reloadQuiz);
+
 

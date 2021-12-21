@@ -21,7 +21,7 @@ body{
     width: 100%;
     height: auto;
     background: rgb(35,89,89);
-    background: linear-gradient(0deg, #00B0B1 10%, #3b3864 18%);
+    background: linear-gradient(0deg, #00B0B1 12%, #3b3864 23%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -360,6 +360,12 @@ background: linear-gradient(135deg, rgba(0,0,0,0.22), rgba(255,255,255,0.25));
 /*========== o naukowcach ===========*/
 .section_flipcards{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flipcards-box{
+  display:flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -530,8 +536,69 @@ box-shadow:  10px 10px 20px #262440,
         }
         }
 
+        .quiz{
+          display:flex;
+          flex-direction:column;
+          justify-content: center;
+          align-items:center;
+        }
+        .quiz__title{
+          display: block;
+          font-size: 3em;
+          padding: 10px;
+          color: #3b3864;
+          text-shadow: 4px -4px 8px #211f38,
+          -4px 4px 8px #555190;
+
+        }
+        .quiz-holder{
+          display:flex;
+          flex-direction:column;
+          justify-content: center;
+          align-items:center;
+          padding: 40px;
+        }
+        .quiz-img{
+          width:250px;
+          height:auto;
+          margin-bottom:40px;
+          animation: floating-ball-model-3;
+          animation-duration: 20s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+      }
+        .quiz__subtitle{
+          font-size: 2.5em;
+          color: #00B0B1;
+          text-shadow: 2px -2px 4px #001c1c,
+          -2px 2px 4px #00ffff;
+        }
+        .container-quiz-buttons{
+          display:flex;
+          flex-direction:column;
+          justify-content: center;
+          align-items:center;
+          padding: 30px;
+          margin-left:20px;
+          margin-right:20px;
+          border-radius: 33px;
+          background: linear-gradient(145deg, #00bcbd, #009e9f);
+          box-shadow:  28px 28px 56px #004647,
+                       -28px -28px 56px #00ffff;
+        }
+        #questionGap{
+          margin-bottom: 25px;;
+        }
+        li{
+          margin-bottom:10px;
+        }
+
 footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top:30px;
+  margin-bottom:30px;
 }
 
 
