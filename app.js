@@ -1,18 +1,28 @@
-let animationTimeline = gsap.timeline({
-    scrollTrigger:{
-        trigger: ".introSection",
-        start: "0%",
-        end: "100%",
-        markers: false, //markery pokazują gdzie zaczyna się animacja
-        scrub: true, //przy scrollowaniu uaktywnia fromTo
-        pin:true, //przykleja to kółko
-    },
-});
-animationTimeline.fromTo(".introSection", {clipPath: 'circle(10%)'}, {clipPath: 'circle(80%)', duration:4});
-animationTimeline.fromTo(".fizykografika", {opacity:1}, {opacity:0, duration:1},"-=4");
-animationTimeline.fromTo(".introText", {opacity:0}, {opacity:1, duration:1});
 
-//Druga strona - Psychotest //
+const navMenu = document.getElementById('nav-menu'),
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close')
+
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
+
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('show-menu')
+    })
+}
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    navMenu.classList.remove('show-menu')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction));
+
+
 const daneQuizu =[
     {
         question: 'Jaki był Twój ulubiony przedmiot w szkole?',

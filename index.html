@@ -4,25 +4,227 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="./style.css"/>
+    <link rel="shortcut icon" href="./assets/faviconspace.png" type="image/x-icon">
+    <title>Quiz popularnonaukowy</title>
+    <link rel="stylesheet" href="./stylezapas.css"/>
     <script src="https://kit.fontawesome.com/a0356a7e97.js" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
-<section class="introSection">
-    <div class="introText">
-        <h1>INTRO-TU BĘDZIE COŚ INNEGO</h1>
-        <h2>TU BĘDZIE COŚ JESZCZE INNEGO!</h2>
-    </div>
-    <div class="fizykografika"><i class="fas fa-atom"></i></div>
-    <div class="makeDarker"></div>
-    <video src="assets/video.mp4"
-    autoplay="true"
-    loop></video>
-</section>
-    <section class="latterSection">
-        
-            <h2>Sprawdź, którym naukowcem jesteś w głębi serca</h2>
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="#" class="nav__logo">
+                <img src="assets/navbar.png" alt="" class="nav__logo-img">
+                QuizTime : Naukowe personalia
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About me</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#quiz" class="nav__link">Quiz</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#naukowcy" class="nav__link">Naukowcy</a>
+                    </li>
+
+                    <a href="#" class="btn">KONTAKT</a>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+
+                <img src="assets/navbar2.png" alt="" class="nav__img">
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-th-large"></i>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sekcja HOME -->
+        <section class="home container" id="home">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- HOME SLIDER 1 -->
+                    <section class="swiper-slide">
+                        <div class="home__content grid">
+                            <div class="home__group">
+                                <img src="assets/home1.png" alt="" class="home__img">
+                                <div class="home__indicator"></div>
+                            </div>
+                            <div class="home__data">
+                                <h3 class="home__subtitle">#1 Sprawdź się w Quizie!</h3>
+                                <h1 class="home__title">JAKIM NAUKOWCEM JESTEŚ?</h1>
+                                <p class="home__description">Witaj! Jestem Aksiuszka. Jestem studentką Informatyki i pasjonatką 
+                                    nauk ścisłych. Zapraszam Cię do uzupełnienia mojego autorskiego quizu! Dobrej zabawy!
+                                </p>
+
+                                <div class="home__buttons">
+                                    <button class="home__button"><a href="#">START QUIZ</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+         <!-- HOME SLIDER -->
+         <section class="swiper-slide">
+            <div class="home__content grid">
+                <div class="home__group">
+                    <img src="assets/home2.png" alt="" class="home__img">
+                    <div class="home__indicator"></div>
+                </div>
+                <div class="home__data">
+                    <h3 class="home__subtitle">#2 Sprawdź się w Quizie!</h3>
+                    <h1 class="home__title">HOROSKOP<br>PLANETARNY</h1>
+                    <p class="home__description">Witaj! Jestem Aksiuszka. Jestem studentką Informatyki i pasjonatką 
+                        nauk ścisłych. Zapraszam Cię do uzupełnienia mojego autorskiego quizu! Dobrej zabawy!
+                    </p>
+
+                    <div class="home__buttons">
+                        <button class="home__button"><a href="#">START QUIZ</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+         <!-- Sekcja NAUKOWCY -->
+         <section class="section_flipcards" id="flipcards">
+            <h2 class="section__title">Naukowcy</h2>
+              <div class="flip-card">
+                  <div class="inner-card">
+                      <div class="front-card">
+                          <img class ="flipcard-photo" src="assets/curie.jpg" alt=""/>
+                          <h2>Maria Curie Skłodowska</h2>
+                      </div>
+                      <div class="back-card">Dane</div>
+                  </div>
+              </div>  
+              <div class="flip-card">
+                <div class="inner-card">
+                    <div class="front-card">
+                        <img class ="flipcard-photo" src="assets/newton.jpg" alt=""/>
+                        <h2>Sir Isaac Newton</h2>
+                    </div>
+                    <div class="back-card">Dane</div>
+                </div>
+            </div>  
+            <div class="flip-card">
+                <div class="inner-card">
+                    <div class="front-card">
+                        <img class ="flipcard-photo" src="assets/fibonacci.jpg" alt=""/>
+                        <h2>Leonardo Fibonacci</h2>
+                    </div>
+                    <div class="back-card">Dane</div>
+                </div>
+            </div>  
+            <div class="flip-card">
+                <div class="inner-card">
+                    <div class="front-card">
+                        <img class ="flipcard-photo" src="assets/darwin.jpg" alt=""/>
+                        <h2>Charles Darwin</h2>
+                    </div>
+                    <div class="back-card">Dane</div>
+                </div>
+            </div>  
+            
+        </section>
+
+        <!-- Sekcja ABOUT -->
+        <section class="section aboutme" id="about">
+            <div class="about__container container grid">
+            <div class="about__data">
+                <h2 class="section__title">O autorce</h2>
+                <div class="card-foldable">
+                    <div class="card-img-box">
+                        <img id="about-me-pic" src="assets/aboutme.png" alt=""/>
+                        </div>
+                        <div class="card-details">
+                            <div class="card-content">
+                                <h2 class="aboutme__title">o mnie</h2>
+                                <p>Cześć! Jestem Aksiuszka i jestem studentką drugiego roku informatyki. Zawodowo jestem software developerem, a w czasie wolnym piję Liptona Forest Fruit
+                                i spaceruję z psem!<br>
+                            Jeśli chcesz zobaczyć moje inne prace, kliknij w poniższe linki!</p>
+                                <div class="card-social-media">
+                                    <a class="about__link" href="#"><i class="fas fa-home"></i></a>
+                                    <a class="about__link" href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+                
+                
+        </section>
+        <!-- Sekcja QUIZ -->
+        <section class="section quiz">
+            <h1 class="quiz__title">QUIZY<br>NIE Z TEGO ŚWIATA</h1>
+            <div class="quiz-holder">
+                <h2>Sprawdź, którym naukowcem jesteś w głębi serca</h2>
+               </div>
+               <div class="container-quiz-buttons">
+           <div class="quizBox">
+               <h2 id="questionGap">Pytanie</h2>
+               <ul>
+                   <li>
+                       <input type="radio" id="a" name="answer" class="answer"/>
+                       <label id="a-answ" for="a"></label>
+                   </li>
+                   <li>
+                       <input type="radio" id="b" name="answer" />
+                       <label id="b-answ" for="b"></label>
+                   </li>
+                   <li>
+                       <input type="radio" id="c" name="answer" class="answer"/>
+                       <label id="c-answ" for="c"></label>
+                   </li>
+                   <li>
+                       <input type="radio" id="d" name="answer" class="answer"/>
+                       <label id="d-answ" for="d"></label>
+                   </li>
+                   <li>
+                       <input type="radio" id="e" name="answer" class="answer"/>
+                       <label id="e-answ" for="e"></label>
+                   </li>
+               </ul>
+       </div>
+       <div class="control-buttons">
+           <button id="prev-btn" class="prev-btn btn"><i class="fas fa-arrow-left"></i></button>
+           <button id="next-btn" class="start-btn btn"><i class="fas fa-arrow-right"></i></button>
+       </div>
+       <h2 id="result"></h2>
+   </div>
+
+        </section>
+        <footer>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum laborum laudantium accusamus explicabo repellendus beatae, nihil deserunt blanditiis sed nisi eaque iure excepturi maxime corporis architecto eligendi fugit neque veniam.
+        </footer>  
+    </main>
+
+                <!--
+                <div class="title-holder">
+                 <h2>Sprawdź, którym naukowcem jesteś w głębi serca</h2>
+                </div>
+                <div class="container-quiz-buttons">
             <div class="quizBox">
                 <h2 id="questionGap">Pytanie</h2>
                 <ul>
@@ -47,13 +249,16 @@
                         <label id="e-answ" for="e"></label>
                     </li>
                 </ul>
-            <div class="control-buttons">
-            <button id="prev-btn" class="prev-btn btn">PREV</button>
-            <button id="next-btn" class="start-btn btn">NEXT</button>
-            <h2 id="result">dsdsfdsf</h2>
         </div>
+        <div class="control-buttons">
+            <button id="prev-btn" class="prev-btn btn"><i class="fas fa-arrow-left"></i></button>
+            <button id="next-btn" class="start-btn btn"><i class="fas fa-arrow-right"></i></button>
         </div>
-    </section>
+        <h2 id="result"></h2>
+    </div>
+    -->
+    
+    
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
     integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
@@ -67,5 +272,17 @@
     referrerpolicy="no-referrer"
   ></script>
   <script src="./app.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        let homeSwiper = new Swiper(".mySwiper", {
+        spaceBetween: 50,
+        loop: 'true',
+    
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+        })
+    </script>
 </body>
 </html>
