@@ -189,3 +189,104 @@ prevButton.addEventListener("click", loadPrevQuestion);
 result.addEventListener("click", reloadQuiz);
 
 
+// Teraz tu mam 2 quiz - horoskop
+const daneHoroskopu=[
+    {
+        questions: 'Wymarzone miejsce na wyjazd wakacyjny',
+        ah: 'Klimaty pustynne ... czerwone piaski!',
+        bh: 'W centrum wulkanu',
+        ch: 'Mazury, Bieszczady... byle zielono!',
+        dh: 'Biegun północny!',
+        eh: 'Nie ważne gdzie, byle w odosobnieniu',
+        ah_weight: '0',
+        bh_weight: '1',
+        ch_weight: '2',
+        dh_weight: '3',
+        eh_weight: '4'
+    },
+    {
+        questions: 'Twoim wymarzonym towarzyszem byłby...?',
+        ah: 'Bakterie :)',
+        bh: 'Bakterie ale ... ekstremofilne :)',
+        ch: 'Pies',
+        dh: 'Yeti! Albo inny śnieżnu potwór',
+        eh: 'Żyję w odosobnieniu',
+        ah_weight: '0',
+        bh_weight: '1',
+        ch_weight: '2',
+        dh_weight: '3',
+        eh_weight: '4'
+    },
+    {
+        questions: 'Ulubione ciasto to...',
+        ah: 'Red Velvet',
+        bh: 'Chocolate lava',
+        ch: 'Leśny mech',
+        dh: 'Tort lodowy',
+        eh: 'Żywię się samotnością',
+        ah_weight: '0',
+        bh_weight: '1',
+        ch_weight: '2',
+        dh_weight: '3',
+        eh_weight: '4'
+    },
+    {
+        questions: 'Moje ulubione święto to ...',
+        ah: 'Dzień... na pustyni!:D',
+        bh: 'Walentynki',
+        ch: 'Wielkanoc!',
+        dh: 'Pierwszy dzień zimy!',
+        eh: 'Nie jestem częścią tej kultury. Nie jestem częścią niczego :(',
+        ah_weight: '0',
+        bh_weight: '1',
+        ch_weight: '2',
+        dh_weight: '3',
+        eh_weight: '4'
+    },
+    {
+        questions: 'Zawsze marzyłem aby zostać ... ',
+        ah: 'Geografem',
+        bh: 'Chemikiem',
+        ch: 'Ogrodnikiem',
+        dh: 'Skateboarderem',
+        eh: 'Samotnikiem',
+        ah_weight: '0',
+        bh_weight: '1',
+        ch_weight: '2',
+        dh_weight: '3',
+        eh_weight: '4'
+    },
+];
+let currentHoroscope = 0;
+let score=[];
+const horoscopeQuestion = document.getElementById('questionGap2');
+const a_answer2 = document.getElementById('a-answ2');
+const b_answer2 = document.getElementById('b-answ2');
+const c_answer2 = document.getElementById('c-answ2');
+const d_answer2 = document.getElementById('d-answ2');
+const e_answer2 = document.getElementById('e-answ2');
+const resultHoroscope = document.getElementById('result2');
+
+const generateHoroscope = (index)=>{
+//Przypisuje wartość punktowa wybranym odpowiedziom
+const horoscope = daneHoroskopu[index];
+const horoscope1total = daneHoroskopu[index].ah_weight;
+const horoscope2total = daneHoroskopu[index].bh_weight;
+const horoscope3total = daneHoroskopu[index].ch_weight;
+const horoscope4total = daneHoroskopu[index].dh_weight;
+const horoscope5total = daneHoroskopu[index].eh_weight;
+//Przypisuje odpowiedzi do htmla
+horoscopeQuestion.innerHTML=`${index+1}. ${horoscope.questions}`
+a_answer2.innerHTML = `${horoscope.ah}`
+b_answer2.innerHTML = `${horoscope.bh}`
+c_answer2.innerHTML = `${horoscope.ch}`
+d_answer2.innerHTML = `${horoscope.dh}`
+e_answer2.innerHTML = `${horoscope.eh}`
+a_answer2.setAttribute('data-total', `${horoscope1total}`);
+b_answer2.setAttribute('data-total', `${horoscope2total}`);
+c_answer2.setAttribute('data-total', `${horoscope3total}`);
+d_answer2.setAttribute('data-total', `${horoscope4total}`);
+e_answer2.setAttribute('data-total', `${horoscope5total}`);
+
+}
+generateHoroscope(currentHoroscope);
